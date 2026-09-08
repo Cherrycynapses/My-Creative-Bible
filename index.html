@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CREATIVE BIBLE | Illustrative Scripture & Journaling Editions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #FAF7F2;
+            --card-bg: #FFFFFF;
+            --primary: #A63A50; /* Rose / Deep Berry accent */
+            --primary-hover: #82293C;
+            --text-dark: #2C2A29;
+            --text-muted: #6E6A66;
+            --accent-teal: #3B9B9B;
+            --accent-gold: #C29B38;
+            --accent-brown: #8B5A2B;
+            --border-color: #E8E2D9;
+            --font-heading: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.03);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* Disclosure Banner */
+        .affiliate-notice {
+            background-color: #F0ECE1;
+            color: var(--text-muted);
+            font-size: 0.825rem;
+            text-align: center;
+            padding: 8px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 40px auto 60px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3.2rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-statement {
+            font-size: 1.05rem;
+            color: #4A4744;
+            margin-bottom: 24px;
+            background-color: #F4EFE6;
+            padding: 20px 24px;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .hero-statement a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .hero-statement .signature {
+            display: block;
+            margin-top: 12px;
+            font-style: normal;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Main Collection Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* Product Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            background-color: #F4F0EA;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-teal {
+            background-color: var(--accent-teal);
+        }
+
+        .badge-gold {
+            background-color: var(--accent-gold);
+        }
+
+        .badge-brown {
+            background-color: var(--accent-brown);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .card-desc ul {
+            margin-top: 8px;
+            padding-left: 18px;
+            font-size: 0.85rem;
+        }
+
+        .card-desc li {
+            margin-bottom: 4px;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .btn-affiliate {
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .btn-affiliate:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Footer */
+        footer {
+            background: #232120;
+            color: #C2BEB8;
+            padding: 60px 24px 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-heading);
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #383533;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                margin-top: 20px;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Affiliate Disclosure Banner -->
+    <div class="affiliate-notice">
+        📌 <strong>Affiliate Disclosure:</strong> As an Amazon Associate, I earn from qualifying purchases made through links on this site.
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">MY CREATIVE <span>BIBLE</span></a>
+            <ul class="nav-links">
+                <li><a href="#featured">Featured Editions</a></li>
+                <li><a href="https://fb.watch/v/5yw9EzZMH/?mibextid=wwXIfr&fs=e" target="_blank" rel="noopener">Inspiration Video ↗</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MY CREATIVE BIBLE</h1>
+            
+            <blockquote class="hero-statement">
+                "I recently came across a video titled <a href="https://fb.watch/v/5yw9EzZMH/?mibextid=wwXIfr&fs=e" target="_blank" rel="noopener">Inspiration</a> by content creator Colin Elliot on his page, <em>R3alism Official</em>, where he spoke thoughtfully about reverence for the Scriptures—emphasizing that the Sacred Text itself should remain sacred and untouched by writing or sketching. It reminded me of this remarkable collection of Bibles, fulfilling a deep longing many believers hold without realizing such an option exists. 
+                <br><br>
+                Rather than obscuring or drawing over the Holy Word, these Bibles feature dedicated, pre-drawn line art illustrations in the margins and spreads that beautifully reflect and correspond to Scripture—inviting you to meditate and color alongside God’s Truth. I pray these editions enrich your personal Bible study."
+                <span class="signature">— Cynthia Eaglin</span>
+            </blockquote>
+
+            <a href="#featured" class="btn">Explore The Collection Below ↓</a>
+        </div>
+        <div class="hero-image">
+            <a href="https://fb.watch/v/5yw9EzZMH/?mibextid=wwXIfr&fs=e" target="_blank" rel="noopener">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" alt="My Creative Bible Collection Header View">
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <main class="container" id="featured">
+        <div class="section-header">
+            <h2>Explore The Editions</h2>
+            <p>Select your preferred edition below to view detailed features and purchase directly on Amazon</p>
+        </div>
+
+        <div class="grid">
+
+            <!-- 1. Vintage Pink Peony Hardcover (1639522379) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge">Pink Peony Hardcover</span>
+                    <a href="https://www.amazon.com/Holy-Bible-Creative-Leather-Hardcover/dp/1639522379?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible KJV Vintage Peony Floral Hardcover">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">1. My Creative Bible (Pink Peony Hardcover)</h3>
+                    <div class="card-desc">
+                        A romantic, floral cloth-wrapped hardcover edition:
+                        <ul>
+                            <li>Full-wrap vintage peony floral artwork with gold foil spine detail</li>
+                            <li>Gilded page edges with matching elastic closure band</li>
+                            <li>Complete KJV text featuring 500+ hand-drawn verse illustrations</li>
+                            <li>ISBN: 1639522379</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/Holy-Bible-Creative-Leather-Hardcover/dp/1639522379?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Teal Illustrator's Spiral Edition (B0FQYCXPYS) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge badge-teal">Teal Spiral Edition</span>
+                    <a href="https://www.amazon.com/KJV-Holy-Bible-Creative-Illustrators/dp/B0FQYCXPYS?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible Illustrator's Edition Teal Wire Spiral KJV">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">2. Illustrator's Edition (Teal Wire Spiral KJV)</h3>
+                    <div class="card-desc">
+                        Designed for an effortless workspace setup:
+                        <ul>
+                            <li>Durable bronze double-wire spiral binding that lies completely flat</li>
+                            <li>Textured teal cover with subtle leaf debossing</li>
+                            <li>2.5" extra-wide unruled and lightly ruled margins for art & mapping</li>
+                            <li>ASIN: B0FQYCXPYS</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/KJV-Holy-Bible-Creative-Illustrators/dp/B0FQYCXPYS?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Pink LeatherLux Filigree Edition (1432114867) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge">Pink LeatherLux</span>
+                    <a href="https://www.amazon.com/dp/1432114867?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible KJV Pink Floral LeatherLux Edition">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">3. My Creative Bible (Pink Floral LeatherLux)</h3>
+                    <div class="card-desc">
+                        Vibrant heat-debossed floral filigree cover:
+                        <ul>
+                            <li>Rich pink LeatherLux cover with debossed butterflies and flowers</li>
+                            <li>Silver foil title accents and satin ribbon page marker</li>
+                            <li>Custom printed page edges and decorative endpages</li>
+                            <li>ISBN: 1432114867</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/dp/1432114867?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Rose Gold Hardcover (1639522387) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge badge-gold">Rose Gold Edition</span>
+                    <a href="https://www.amazon.com/dp/1639522387?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible Rose Gold KJV Edition">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">4. My Creative Bible (Rose Gold Hardcover)</h3>
+                    <div class="card-desc">
+                        Elegant metallic and warm earth-tone edition:
+                        <ul>
+                            <li>Rose gold foil accents with metallic cover detailing</li>
+                            <li>Single-column scripture text in clear 9-point type</li>
+                            <li>Full-page illustrations and margin artwork for verse journaling</li>
+                            <li>ISBN: 1639522387</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/dp/1639522387?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Illustrator's Spiral Edition - Rose Gold (1642726575) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge badge-gold">Rose Gold Spiral</span>
+                    <a href="https://www.amazon.com/dp/1642726575?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible Illustrator's Edition Rose Gold Spiral">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">5. Illustrator's Edition (Rose Gold Spiral)</h3>
+                    <div class="card-desc">
+                        Twin-wire spiral bound edition in elegant rose gold styling:
+                        <ul>
+                            <li>Spine-free lay-flat design for comfortable art and writing</li>
+                            <li>Includes key verse introductions and artist-ready margins</li>
+                            <li>Ideal for watercolor pencils and non-bleed archival ink pens</li>
+                            <li>ISBN: 1642726575</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/dp/1642726575?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Aqua Teal LeatherLux Edition (1432115928) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge badge-teal">Aqua LeatherLux</span>
+                    <a href="https://www.amazon.com/dp/1432115928?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible KJV Aqua Teal LeatherLux Edition">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">6. My Creative Bible (Aqua Teal LeatherLux)</h3>
+                    <div class="card-desc">
+                        Classic debossed faux-leather edition:
+                        <ul>
+                            <li>Soft aqua teal LeatherLux with silver foil stamped lettering</li>
+                            <li>Floral printed page edges visible when closed</li>
+                            <li>Matching teal elastic band to keep your Bible protected</li>
+                            <li>ISBN: 1432115928</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/dp/1432115928?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Turquoise Debossed LeatherLux Edition (1432114875) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge badge-teal">Turquoise LeatherLux</span>
+                    <a href="https://www.amazon.com/dp/1432114875?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible KJV Turquoise LeatherLux Edition">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">7. My Creative Bible (Turquoise LeatherLux)</h3>
+                    <div class="card-desc">
+                        Heat-debossed turquoise cover featuring floral artwork:
+                        <ul>
+                            <li>Detailed debossed cover art with silver metallic title stamping</li>
+                            <li>Single-column layout with 500+ line art margin drawings</li>
+                            <li>Custom endpages and matching ribbon page marker</li>
+                            <li>ISBN: 1432114875</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/dp/1432114875?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Saddle Brown LeatherLux Edition (1432115340) -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="badge badge-brown">Saddle Brown</span>
+                    <a href="https://www.amazon.com/gp/product/1432115340?tag=cynapses-20" target="_blank" rel="noopener sponsored">
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=600&q=80" alt="My Creative Bible KJV Saddle Brown LeatherLux Edition">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">8. My Creative Bible (Saddle Brown LeatherLux)</h3>
+                    <div class="card-desc">
+                        Warm, classic rich brown faux-leather edition:
+                        <ul>
+                            <li>Supple saddle brown LeatherLux cover with intricate heat-debossed scripture calligraphy</li>
+                            <li>Gold foil spine accents with a rich, timeless vintage aesthetic</li>
+                            <li>Single-column layout featuring over 500 line-art illustrations and wide margin space</li>
+                            <li>ISBN: 1432115340</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.amazon.com/gp/product/1432115340?tag=cynapses-20" target="_blank" rel="noopener sponsored" class="btn-affiliate">View on Amazon ↗</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>MY CREATIVE BIBLE</h3>
+                <p>Curating creative Bibles, journaling supplies, and devotional tools for visual faith journeying.</p>
+            </div>
+            <div>
+                <h4 style="color:white; margin-bottom: 12px;">Quick Links</h4>
+                <p><a href="#featured" style="color: #C2BEB8; text-decoration:none;">Featured Collection</a></p>
+                <p><a href="https://fb.watch/v/5yw9EzZMH/?mibextid=wwXIfr&fs=e" target="_blank" rel="noopener" style="color: #C2BEB8; text-decoration:none;">Inspiration Video ↗</a></p>
+            </div>
+            <div>
+                <h4 style="color:white; margin-bottom: 12px;">Disclosure</h4>
+                <p>We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by linking to Amazon.com.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 MY CREATIVE BIBLE. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
